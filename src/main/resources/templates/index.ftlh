@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+[#ftl]
 <html lang="cs">
 <head>
     <meta charset="UTF-8">
@@ -7,6 +7,11 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-    <h1>Tady bude můj blog…</h1>
+    <h1>Můj blog</h1>
+    <ul>
+        [#list posts.content as post]
+        <li><a href="/post/${post.slug}">${post.title?no_esc}</a></li>
+        [/#list]
+    </ul>
 </body>
 </html>
